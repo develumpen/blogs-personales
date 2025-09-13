@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_12_223320) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_13_215308) do
   create_table "blogs", force: :cascade do |t|
     t.string "url", null: false
     t.string "title", null: false
@@ -19,5 +19,23 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_223320) do
     t.datetime "accepted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "feed_etag"
+    t.string "feed_last_modified"
   end
+
+  create_table "feed_items", force: :cascade do |t|
+    t.integer "blog_id", null: false
+    t.string "title", null: false
+    t.string "link", null: false
+    t.string "guid", null: false
+    t.datetime "published_at", null: false
+    t.text "summary"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id", "guid"], name: "index_feed_items_on_blog_id_and_guid", unique: true
+    t.index ["blog_id"], name: "index_feed_items_on_blog_id"
+  end
+
+  add_foreign_key "feed_items", "blogs"
 end
