@@ -1,0 +1,12 @@
+<% content_for :title, "Blogs" %>
+
+<h1><%= content_for :title %></h1>
+
+<%= link_to "Añadir blog", new_blog_path %>
+
+<div id="blogs">
+  <% @blogs.each do |blog| %>
+    <%= render blog %>
+  <% end %>
+</div>
+

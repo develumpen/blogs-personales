@@ -1,0 +1,49 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 4,
+      "fingerprint": "c6058c6c8efdc9d8266e64746bbddbe7c45e765e44acea77852def959f9c4f26",
+      "check_name": "LinkToHref",
+      "message": "Potentially unsafe model attribute in `link_to` href",
+      "file": "app/views/blogs/_blog.html.erb",
+      "line": 11,
+      "link": "https://brakemanscanner.org/docs/warning_types/link_to_href",
+      "code": "link_to(\"Visitar blog\", Blog.find(params.expect(:id)).url, :target => \"_blank\")",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "BlogsController",
+          "method": "show",
+          "line": 9,
+          "file": "app/controllers/blogs_controller.rb",
+          "rendered": {
+            "name": "blogs/show",
+            "file": "app/views/blogs/show.html.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "blogs/show",
+          "line": 1,
+          "file": "app/views/blogs/show.html.erb",
+          "rendered": {
+            "name": "blogs/_blog",
+            "file": "app/views/blogs/_blog.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "blogs/_blog"
+      },
+      "user_input": "Blog.find(params.expect(:id)).url",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.1.0"
+}
