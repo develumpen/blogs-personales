@@ -21,5 +21,11 @@ class BlogDataFromUrl
       description: doc.at("meta[name='description']")&.[]("content")&.strip,
       feed_urls:
     }
+  rescue => e
+    Rails.logger.error("[ERROR] => #{e.message}")
+
+    {
+      feed_urls: []
+    }
   end
 end
