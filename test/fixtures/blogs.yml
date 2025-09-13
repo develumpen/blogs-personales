@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: https://one.blog
+  title: Blog One
+  description: This is the blog number one
+  feed_url: https://one.blog/feed.xml
+  accepted_at: 2025-09-12 17:33:20
+
+two:
+  url: https://two.blog
+  title: Blog Two
+  description: This is the blog number two
+  feed_url: https://two.blog/entries.xml
+  accepted_at: 2025-09-12 17:33:20

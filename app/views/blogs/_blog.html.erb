@@ -1,0 +1,12 @@
+<div id="<%= dom_id blog %>">
+  <h2>
+    <%= link_to_unless_current blog.title, blog_path(blog) %>
+  </h2>
+
+  <div>
+    <%= simple_format blog.description %>
+  </div>
+
+  <p><%= link_to "Visitar blog", blog.url, target: "_blank" %></p>
+</div>
+

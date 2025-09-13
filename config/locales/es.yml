@@ -1,0 +1,14 @@
+es:
+  activerecord:
+    models:
+      blog:
+        one: Blog
+        other: Blogs
+    attributes:
+      blog:
+        url: URL
+        title: Título
+        description: Descripción
+        feed_url: Feed
+        feed_urls: Feeds
+        accepted_at: Aceptado
