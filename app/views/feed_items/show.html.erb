@@ -1,8 +1,6 @@
-<%= render @blog %>
+<h1>Últimas actualizaciones</h1>
 
-<h2>Últimas actualizaciones</h2>
-
-<% @blog.feed_items.each do |item| %>
+<% @feed_items.each do |item| %>
   <div>
     <h2><%= link_to item.title, item.link %></h2>
     <div>
@@ -23,3 +21,4 @@
     <hr />
   </div>
 <% end %>
+
